@@ -183,10 +183,10 @@ export class PagosService {
                 
               },
             ],
-            notification_url: "https://f1b1-167-0-186-78.ngrok-free.app/pagos/webhook",
+            notification_url: "https://b1c3-167-0-186-78.ngrok-free.app/pagos/webhook",
           },
         });
-
+       
         if (order && Object.keys(order).length > 0) {
           const addAddress = new Address();
           addAddress.city = order.city;
@@ -338,7 +338,7 @@ export class PagosService {
             orderDetail: {
               orderDetailProducts: {
                 product: { category: true },
-                orderDetailFlavors: true,
+                orderDetailFlavors: { flavor: true },
               },
               orderDetailGiftCards: {
                 giftCard: true,
@@ -350,7 +350,8 @@ export class PagosService {
           },
         });
 
-        console.log("ordenwebhook:");
+        console.log("ordenwebhook:", orderById.orderDetail.orderDetailProducts);
+
         if (orderById.status === status.FINISHED)
           throw new BadRequestException("Order Finished");
         if (!orderById) throw new NotFoundException("Order not found");

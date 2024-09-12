@@ -185,7 +185,7 @@ export class ShipmentsService {
           dimensions: {
             length: 10,
             width: 10,
-            height: 10,
+            height: 3,
           },
         },
       ],
@@ -317,13 +317,13 @@ export class ShipmentsService {
           amount: 1,
           type: 'box',
           dimensions: {
-            length: 2,
-            width: 5,
-            height: 5,
+            length: 20,
+            width: 30,
+            height: 15,
           },
           weight: 1,
           insurance: 0,
-          declaredValue: 400,
+          declaredValue: 10,
           weightUnit: 'KG',
           lengthUnit: 'CM',
         },
@@ -331,7 +331,7 @@ export class ShipmentsService {
       shipment: {
         carrier: createShipmentDto.carrier,
         service: createShipmentDto.carrierService,
-        type: 1,
+        type: 0,
       },
       settings: {
         printFormat: 'PDF',
